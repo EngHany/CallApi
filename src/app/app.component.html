@@ -18,11 +18,17 @@
   </li>
 </ul>
 
-<button (click)="calling()">click me</button>
+<button (click)="calling()">click me show</button>
+<button (click)="adding()">click me add</button>
+
+
+
 
 
 <div class="container">
+    <input type="text" [(ngModel)]="_postsArray.name">
   <div class="row">
+    
       <table class="table">
           <thead class="thead-inverse">
           <tr>
@@ -38,6 +44,8 @@
               <td class="text-center" style="width: 15px;">{{post.id}}</td>
               <td class="text-center" style="width: 200px;">{{post.name}}</td>
               <td class="text-center">{{post.phone}}</td>
+              <td><button (click)="DeleteItem(post.id)">Delete</button></td>
+              <td><button (click)="EditItem(post)">Edit</button></td>
           </tr>
           </tbody>
       </table>
